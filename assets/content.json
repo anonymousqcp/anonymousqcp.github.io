@@ -1,0 +1,49 @@
+{
+  "elements": {
+    "card.transport.h3": {
+      "text": "Carry more steadily"
+    },
+    "header.anonymous": {
+      "desktop": {
+        "x": -4,
+        "y": 1
+      }
+    },
+    "header.nav.1": {
+      "desktop": {
+        "fontSize": 17
+      }
+    },
+    "header.nav.2": {
+      "desktop": {
+        "fontSize": 17
+      }
+    },
+    "header.nav.3": {
+      "desktop": {
+        "fontSize": 17
+      }
+    },
+    "header.venue.1": {
+      "desktop": {
+        "x": 2,
+        "y": 1
+      }
+    },
+    "hero.1": {
+      "desktop": {
+        "fontSize": 16
+      }
+    },
+    "hero.2": {
+      "desktop": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "hero.4": {
+      "text": "Success is only the beginning. QCP lets a robot control how it performs a task moving faster, carrying more steadily, and executing with better quality."
+    }
+  },
+  "version": 1
+}

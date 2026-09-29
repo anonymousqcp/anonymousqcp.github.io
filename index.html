@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Quality-Controllable Policies: video comparisons of robot execution quality. Anonymous CSIR@CoRL2026 submission.">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; media-src 'self'; font-src 'self'; style-src 'self'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>QCP · Quality-Controllable Robot Policies</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/texgyrepagella-regular.otf" as="font" type="font/otf" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css?v=concise-results">
+  <script src="assets/js/comparisons.js?v=concise-results" defer></script>
+  <script src="assets/js/site.js?v=concise-results" defer></script>
+  <script src="assets/js/content-layout.js?v=1" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#comparisons">Skip to video comparisons</a>
+  <header class="masthead wrapper">
+    <a class="wordmark" href="#top" aria-label="QCP home">QCP<span class="wordmark-rule" aria-hidden="true"></span></a>
+    <span class="submission">CSIR@CoRL2026 <span class="desktop-only">/</span> <span>Anonymous submission</span></span>
+    <nav aria-label="Main navigation"><a href="#comparisons">Videos</a><a href="#quality">Quality</a><a href="#idea">Key idea</a></nav>
+  </header>
+  <main id="top">
+    <section class="hero wrapper" aria-labelledby="title">
+      <p class="eyebrow">Video supplementary material</p>
+      <h1 id="title">Learning Quality-Controllable<br class="desktop-only"> Robot Policies</h1>
+      <p class="hero-subtitle">with Iterative Hindsight Relabeling</p>
+      <p class="hero-description">Success is only the beginning. QCP lets a robot control <em>how</em> it performs a task—moving faster, carrying more steadily, and executing with better quality.</p>
+      <a class="primary-link" href="#comparisons">Explore the comparisons <span aria-hidden="true">↓</span></a>
+    </section>
+
+    <section id="comparisons" class="comparison-section" aria-labelledby="comparison-title">
+      <div class="wrapper section-heading">
+        <div><p class="eyebrow">01 / Watch the difference</p><h2 id="comparison-title">Same task. Different execution.</h2></div>
+        <p class="section-intro">Compare Base and QCP vertically. <br>Scroll sideways to explore each quality.</p>
+      </div>
+      <div class="wrapper gallery-toolbar">
+        <div class="filter-list" role="group" aria-label="Filter comparisons by quality"><button class="filter active" data-filter="all" aria-pressed="true">All qualities</button></div>
+        <div class="gallery-arrows"><button id="previous" class="arrow-button" aria-label="Previous comparison" title="Previous comparison; wraps to the end">←</button><button id="next" class="arrow-button" aria-label="Next comparison" title="Next comparison; wraps to the beginning">→</button></div>
+      </div>
+      <div class="comparison-shell wrapper">
+        <div class="row-labels" aria-hidden="true"><span class="base-row-label">Base</span><span class="qcp-row-label">QCP <small>Ours</small></span></div>
+        <div id="comparison-track" class="comparison-track" tabindex="0" aria-label="Two-row video comparisons. Use left and right arrow keys or swipe to browse."></div>
+      </div>
+      <div class="wrapper gallery-footer"><p id="gallery-status" aria-live="polite"></p><p>Paired playback · Muted video · Quality-specific metrics</p></div>
+      <noscript><p class="wrapper">Enable JavaScript to browse paired video comparisons.</p></noscript>
+    </section>
+
+    <section id="quality" class="quality-section wrapper" aria-labelledby="quality-title">
+      <div class="section-heading"><div><p class="eyebrow">02 / Beyond a success flag</p><h2 id="quality-title">More than one way to do well.</h2></div><p class="section-intro">Different tasks call for different qualities.<br>QCP makes the desired behavior an input.</p></div>
+      <p class="quality-count">14 quality axes · 18 benchmark-specific definitions</p>
+      <div class="quality-grid">
+        <article><span class="quality-number">01</span><h3>Completion speed</h3><p>How many steps, or how much time, the robot needs to finish.</p><span class="metric-definition">Steps / completion time ↓</span></article>
+        <article><span class="quality-number">02</span><h3>End-effector speed</h3><p>How quickly the robot’s hand moves along its trajectory.</p><span class="metric-definition">Mean EEF speed ↑</span></article>
+        <article><span class="quality-number">03</span><h3>Action smoothness</h3><p>How gently successive arm commands change.</p><span class="metric-definition">Normalized action jerk ↓</span></article>
+        <article><span class="quality-number">04</span><h3>End-effector smoothness</h3><p>How consistently the hand’s displacement changes along its path.</p><span class="metric-definition">Normalized EEF jerk ↓</span></article>
+        <article><span class="quality-number">05</span><h3>Joint smoothness</h3><p>How smoothly joint motion changes over time.</p><span class="metric-definition">Mean joint jerk ↓ · rad/s³</span></article>
+        <article><span class="quality-number">06</span><h3>Cartesian smoothness</h3><p>How smoothly the wrist moves through physical space.</p><span class="metric-definition">Mean Cartesian jerk ↓ · m/s³</span></article>
+        <article><span class="quality-number">07</span><h3>Joint path length</h3><p>How much total motion the robot’s joints travel.</p><span class="metric-definition">Accumulated joint travel ↓ · rad</span></article>
+        <article><span class="quality-number">08</span><h3>Cartesian path length</h3><p>How far the robot’s hand travels through space.</p><span class="metric-definition">Translation / Cartesian path ↓ · m</span></article>
+        <article><span class="quality-number">09</span><h3>Orientation path length</h3><p>How much the robot’s hand rotates during execution.</p><span class="metric-definition">Rotation / orientation path ↓ · rad</span></article>
+        <article><span class="quality-number">10</span><h3>Grasp timing</h3><p>When the gripper first begins to close within the motion.</p><span class="metric-definition">Relative grasp timing ↓</span></article>
+        <article><span class="quality-number">11</span><h3>Lift amplitude</h3><p>The vertical range covered by the robot’s hand.</p><span class="metric-definition">Vertical range ↕ · m</span></article>
+        <article><span class="quality-number">12</span><h3>Arm velocity coordination</h3><p>How closely the two arms’ joint speeds match.</p><span class="metric-definition">Bimanual velocity difference ↓</span></article>
+        <article><span class="quality-number">13</span><h3>Gripper height coordination</h3><p>How closely the two hands stay at the same height.</p><span class="metric-definition">Bimanual height difference ↓</span></article>
+        <article><span class="quality-number">14</span><h3>Transport stability</h3><p>How close a carried tray stays to level.</p><span class="metric-definition">Mean tilt angle ↓ · rad</span></article>
+      </div>
+      <p class="section-note">All quality definitions used in our evaluations are represented here. Related speed and path measures share a card; normalized smoothness proxies and physical jerk remain separate. Arrows indicate the primary preference; completion speed and lift amplitude can be controlled in both directions. Task success and conveyor throughput are reported separately as outcome measures.</p>
+    </section>
+
+    <section id="idea" class="idea-section" aria-labelledby="idea-title"><div class="wrapper">
+      <div class="section-heading"><div><p class="eyebrow">03 / The key idea</p><h2 id="idea-title">Choose a quality. Expand what is possible.</h2></div></div>
+      <div class="idea-copy"><p>QCP conditions a robot policy on discrete quality levels. At test time, a target level specifies the execution behavior we want.</p><p>Iterative hindsight relabeling collects successful rollouts, measures the quality they actually achieve, and relabels the accumulated data before training again. As better executions enter the dataset, the controllable quality range can extend beyond the initial demonstrations.</p></div>
+      <figure class="method-figure"><img src="assets/images/method-overview.png" width="2400" height="1143" loading="lazy" alt="QCP conditions robot actions on quality tokens. An iterative loop collects successful rollouts, measures their achieved quality, relabels the dataset, and trains the policy again."><figcaption><span>QCP overview</span> Quality conditioning controls execution; iterative hindsight relabeling expands the attainable range.</figcaption></figure>
+    </div></section>
+  </main>
+  <footer class="wrapper footer"><a class="wordmark" href="#top">QCP</a><p>Anonymous submission to CSIR@CoRL2026<br><span>Video supplementary material</span></p><a href="#comparisons">Back to comparisons ↑</a></footer>
+</body>
+</html>
